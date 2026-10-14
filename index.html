@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075b43">
+
+<title>Hindatu Islamiyya | Official Website</title>
+
+<style>
+:root {
+  --green: #075b43;
+  --dark: #043b2e;
+  --gold: #d5ad55;
+  --cream: #fbf8ef;
+  --white: #ffffff;
+  --text: #24352e;
+  --muted: #69766f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.topbar {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 15px #0000000c;
+}
+
+.nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  border: 2px solid var(--gold);
+}
+
+.brand h2 {
+  font-size: 17px;
+  color: var(--green);
+  line-height: 1.3;
+}
+
+.brand small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.navlinks {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navlinks a:hover {
+  color: #b38a35;
+}
+
+.menu-btn {
+  display: none;
+  background: var(--green);
+  color: white;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 90% 20%, #ffffff13 0 90px, transparent 91px),
+    linear-gradient(125deg, var(--dark), var(--green));
+  color: white;
+  padding: 90px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "۞";
+  position: absolute;
+  right: 4%;
+  bottom: -100px;
+  font-size: 330px;
+  color: #ffffff08;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 65px);
+  line-height: 1.15;
+  max-width: 750px;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 620px;
+  color: #e0ebe5;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 21px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.btn-gold:hover {
+  background: #e8c778;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: white;
+  border: 1px solid #ffffff80;
+  margin-left: 9px;
+}
+
+.btn-outline:hover {
+  background: #ffffff14;
+}
+
+section {
+  padding: 70px 20px;
+  scroll-margin-top: 85px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+
+.section-heading .eyebrow {
+  color: #a77c25;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  color: var(--green);
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.about-copy h3 {
+  font-size: 25px;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.about-copy p {
+  margin-bottom: 15px;
+  color: #526158;
+}
+
+.about-panel {
+  background: var(--green);
+  border-radius: 16px;
+  color: white;
+  padding: 30px;
+  border-bottom: 5px solid var(--gold);
+}
+
+.about-panel .arabic {
+  font-family: "Times New Roman", serif;
+  color: var(--gold);
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.about-panel h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.about-panel p {
+  color: #e1ebe5;
+}
+
+.programmes {
+  background: #f1eddf;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #e9e2d2;
+  box-shadow: 0 7px 24px #173a2910;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #e8f1e9;
+  font-size: 29px;
+  margin-bottom: 18px;
+}
+
+.card .arabic {
+  color: #a77c25;
+  font-size: 25px;
+  font-family: "Times New Roman", serif;
+}
+
+.card h3 {
+  color: var(--green);
+  font-size: 23px;
+  margin: 4px 0 12px;
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.card li {
+  padding: 7px 0;
+  border-bottom: 1px solid #edf0eb;
+  font-size: 14px;
+}
+
+.card li::before {
+  content: "✓";
+  color: #a77c25;
+  font-weight: bold;
+  margin-right: 9px;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 24px;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.value {
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  border-top: 3px solid var(--gold);
+}
+
+.value h3 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.value p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.admissions {
+  background: var(--green);
+  color: white;
+}
+
+.admissions .section-heading h2 {
+  color: white;
+}
+
+.admissions .section-heading p {
+  color: #dbe8df;
+}
+
+.form-card {
+  max-width: 760px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+  color: var(--text);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px #00000015;
+}
+
+.form-card h3 {
+  color: var(--green);
+  font-size: 23px;
+  margin-bottom: 7px;
+}
+
+.form-card > p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.field {
+  margin-bottom: 17px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d7ded8;
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #075b4314;
+}
+
+.field textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #168b50;
+  color: white;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background: #087440;
+}
+
+.form-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 13px;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.contact-box {
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #e9e5d9;
+}
+
+.contact-box h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.contact-number {
+  font-weight: bold;
+  color: var(--green);
+  font-size: 18px;
+}
+
+footer {
+  background: var(--dark);
+  color: #e4ece6;
+  text-align: center;
+  padding: 28px 20px;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+footer p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #168b50;
+  color: white;
+  padding: 13px 17px;
+  border-radius: 50px;
+  box-shadow: 0 5px 20px #0003;
+  font-weight: bold;
+  z-index: 20;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navlinks {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+
+  .navlinks a {
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+  }
+
+  .hero {
+    padding: 65px 20px;
+  }
+
+  .about-grid,
+  .cards,
+  .values-grid,
+  .contact-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .form-card {
+    padding: 22px 17px;
+  }
+
+  .btn-outline {
+    margin: 12px 0 0;
+  }
+
+  section {
+    padding: 55px 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  Welcome to Hindatu Islamiyya — A Place of Islamic Learning
+</div>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#home">
+      <div class="logo">۞</div>
+      <div>
+        <h2>HINDATU ISLAMIYYA</h2>
+        <small>Knowledge • Faith • Good Character</small>
+      </div>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation">
+      ☰ Menu
+    </button>
+
+    <div class="navlinks" id="navlinks">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#programmes" onclick="closeMenu()">Programmes</a>
+      <a href="#admissions" onclick="closeMenu()">Admissions</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">Welcome to our Islamic school</div>
+
+    <h1>Seeking Knowledge.<br>
+      <span>Strengthening Faith.</span>
+    </h1>
+
+    <p>
+      Welcome to Hindatu Islamiyya, a place dedicated to Islamic learning,
+      Qur'anic studies, Hadith, Islamic books, and the development of good character.
+    </p>
+
+    <a class="btn btn-gold" href="#admissions">Apply for Admission →</a>
+    <a class="btn btn-outline" href="#programmes">Explore Programmes</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">About our school</div>
+      <h2>Welcome to Hindatu Islamiyya</h2>
+      <p>Learning the Qur'an and Islamic knowledge with dedication and good character.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <h3>A Place to Learn and Grow in Faith</h3>
+        <p>
+          Hindatu Islamiyya is an Islamic learning institution focused on
+          helping students deepen their understanding of the Qur'an and
+          other important Islamic teachings.
+        </p>
+        <p>
+          Our programmes include Ma'ahad, for Qur'anic studies, and Barna Maj,
+          for the study of Hadith and other Islamic books.
+        </p>
+        <p>
+          We aim to encourage students to seek beneficial knowledge,
+          practise good manners, and strengthen their connection with Islam.
+        </p>
+      </div>
+
+      <div class="about-panel">
+        <div class="arabic" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <h3>Our Principal</h3>
+        <p>
+          Imam Abubakar Yahaya Azzarawi
+        </p>
+        <p style="margin-top:12px">
+          We welcome students who are ready to learn, improve their knowledge,
+          and grow in Islamic understanding.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programmes" id="programmes">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our programmes</div>
+      <h2>Explore Our Islamic Classes</h2>
+      <p>Learn about the two main programmes offered at Hindatu Islamiyya.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">📖</div>
+        <div class="arabic" lang="ar" dir="rtl">معهد</div>
+        <h3>Ma'ahad</h3>
+        <p>
+          A programme dedicated to Qur'anic learning, helping students
+          develop their recitation, memorisation, and understanding as
+          appropriate to their level.
+        </p>
+        <ul>
+          <li>Qur'an reading and recitation</li>
+          <li>Qur'an memorisation and revision</li>
+          <li>Support towards completing Qur'an studies</li>
+          <li>Building respect for the Book of Allah</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📚</div>
+        <div class="arabic" lang="ar" dir="rtl">برنامج</div>
+        <h3>Barna Maj</h3>
+        <p>
+          A programme focused on studying Hadith and other Islamic books
+          to deepen students' knowledge of Islamic teachings.
+        </p>
+        <ul>
+          <li>Study of Hadith</li>
+          <li>Reading and understanding Islamic books</li>
+          <li>Learning Islamic teachings and principles</li>
+          <li>Developing good manners and practice</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="note">
+      Students should contact the school to confirm class levels,
+      entry requirements, timetable, and current admission details.
+    </p>
+  </div>
+</section>
+
+<section id="values">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">What we value</div>
+      <h2>Knowledge With Good Character</h2>
+      <p>Islamic education is about learning beneficial knowledge and putting it into practice.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value">
+        <h3>📖 Qur'anic Learning</h3>
+        <p>Encouraging students to learn, recite, revise, and honour the Holy Qur'an.</p>
+      </div>
+
+      <div class="value">
+        <h3>📚 Islamic Knowledge</h3>
+        <p>Developing understanding through Hadith and other Islamic books.</p>
+      </div>
+
+      <div class="value">
+        <h3>🌿 Good Character</h3>
+        <p>Encouraging respect, sincerity, discipline, and good manners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="admissions" id="admissions">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Join our school</div>
+      <h2>Admission Enquiry Form</h2>
+      <p>Complete the form below to enquire about admission at Hindatu Islamiyya.</p>
+    </div>
+
+    <div class="form-card">
+      <h3>Student Information</h3>
+      <p>Enter the correct details. Your message will be prepared in WhatsApp for the school.</p>
+
+      <form id="admissionForm" onsubmit="sendApplication(event)">
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="studentName">Student's Full Name *</label>
+            <input id="studentName" name="studentName" type="text"
+              placeholder="Enter student's name" required>
+          </div>
+
+          <div class="field">
+            <label for="guardianName">Parent/Guardian Name *</label>
+            <input id="guardianName" name="guardianName" type="text"
+              placeholder="Enter parent or guardian name" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Parent/Guardian Phone *</label>
+            <input id="phone" name="phone" type="tel"
+              placeholder="Enter phone number" required>
+          </div>
+
+          <div class="field">
+            <label for="age">Student's Age</label>
+            <input id="age" name="age" type="number"
+              min="1" max="100" placeholder="Enter age">
+          </div>
+
+          <div class="field full">
+            <label for="programme">Preferred Programme *</label>
+            <select id="programme" name="programme" required>
+              <option value="">Select a programme</option>
+              <option value="Ma'ahad (معهد) - Qur'anic Studies">Ma'ahad (معهد) — Qur'anic Studies</option>
+              <option value="Barna Maj (برنامج) - Hadith and Islamic Books">Barna Maj (برنامج) — Hadith and Islamic Books</option>
+              <option value="Need guidance about the programmes">I need guidance about the programmes</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="address">Town/Area of Residence</label>
+            <input id="address" name="address" type="text"
+              placeholder="Enter town or area">
+          </div>
+
+          <div class="field full">
+            <label for="message">Additional Information</label>
+            <textarea id="message" name="message"
+              placeholder="Write any questions or additional information here"></textarea>
+          </div>
+
+        </div>
+
+        <button class="btn submit-btn" type="submit">
+          Send Admission Enquiry via WhatsApp
+        </button>
+
+        <p class="form-note">
+          By continuing, the details you enter will be included in a WhatsApp
+          message. Check them before sending.
+        </p>
+      </form>
