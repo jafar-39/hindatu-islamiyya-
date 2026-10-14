@@ -828,3 +828,115 @@ footer p {
           message. Check them before sending.
         </p>
       </form>
+div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Contact Hindatu Islamiyya</h2>
+      <p>Contact the school for information about classes and admission.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>School Principal</h3>
+        <p>Imam Abubakar Yahaya Azzarawi</p>
+        <h3 style="margin-top:20px">Phone / WhatsApp</h3>
+        <p class="contact-number">+234 803 810 2495</p>
+        <a class="btn btn-gold"
+          href="https://wa.me/2348038102495"
+          target="_blank" rel="noopener">
+          Chat With the School
+        </a>
+      </div>
+
+      <div class="contact-box">
+        <h3>Admission Information</h3>
+        <p>
+          Have questions about Ma'ahad, Barna Maj, or joining the school?
+          Send an enquiry to the school's contact number.
+        </p>
+        <a class="btn btn-gold" href="#admissions">Enquire About Admission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>HINDATU ISLAMIYYA</strong>
+  <p>Seeking Knowledge. Strengthening Faith.</p>
+  <p>Principal: Imam Abubakar Yahaya Azzarawi</p>
+  <p>Phone: +234 803 810 2495</p>
+  <p style="margin-top:15px">
+    © <span id="year"></span> Hindatu Islamiyya. All rights reserved.
+  </p>
+</footer>
+
+<a class="whatsapp-float"
+  href="https://wa.me/2348038102495"
+  target="_blank" rel="noopener"
+  aria-label="Contact Hindatu Islamiyya on WhatsApp">
+  WhatsApp
+</a>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navlinks").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("navlinks").classList.remove("open");
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function sendApplication(event) {
+  event.preventDefault();
+
+  const form = document.getElementById("admissionForm");
+
+  const studentName = document.getElementById("studentName").value.trim();
+  const guardianName = document.getElementById("guardianName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const age = document.getElementById("age").value.trim();
+  const programme = document.getElementById("programme").value;
+  const address = document.getElementById("address").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const applicationMessage =
+`ASSALAMU ALAIKUM.
+HINDATU ISLAMIYYA - ADMISSION ENQUIRY
+
+Student's Name: ${studentName}
+Parent/Guardian: ${guardianName}
+Phone Number: ${phone}
+Age: ${age || "Not provided"}
+Preferred Programme: ${programme}
+Town/Area: ${address || "Not provided"}
+Additional Information: ${message || "None"}
+
+Please provide information about admission. Thank you.`;
+
+  const whatsappURL =
+    "https://wa.me/2348038102495?text=" +
+    encodeURIComponent(applicationMessage);
+
+  window.location.href = whatsappURL;
+}
+</script>
+<footer style="background:#043b2e;color:white;text-align:center;padding:25px 10px;">
+  <p>HINDATU ISLAMIYYA</p>
+  <p>Designed &amp; Developed by <strong>Jafar Muhammad Lawal</strong></p>
+  <p>© 2026 Hindatu Islamiyya. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+</body>
+</html>
+
